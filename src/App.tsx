@@ -1,120 +1,51 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
+
 import './App.css'
+import Bevezeto from './components/bevezeto'
+import { Header } from './components/fejlec'
+import { Alapanyagok, IzEsIllat, Nepszeru } from './components/lista'
+import { Tablazat } from './components/tablazat'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+      <Header
+        title='REACT gyakorlás: Komponensekre bontás'
+        subtitle='Téma: Pálinkák és gyümölcspárlatok'
+      />
 
-      <div className="ticks"></div>
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
+
+      <Bevezeto
+        elso=' A pálinka a magyar gasztronómiai és kulturális hagyományok egyik
+                ismert itala. Készítése során erjesztett gyümölcsből lepárlással
+                állítanak elő gyümölcspárlatot.'
+        masodik=' A pálinka készítésének egyik fontos alapanyaga a megfelelő
+                minőségű, érett gyümölcs. Gyakori alapanyag például az alma, a
+                szilva, a körte, a meggy és a kajszibarack.
+        'harmadik=' A jó minőségű pálinka készítésénél az alapanyag minősége és a
+                megfelelő technológia egyaránt fontos.
+              '
+      />
+
+
+    <Alapanyagok
+    i1='Alma' i2='Körte' i3='Szilva' i4='Meggy' i5='Kajszibarack'
+    />
+
+    <Nepszeru
+    i1='Szilvapálinka' i2='Barackpálinka' i3='Körtepálinka' i4='Almapálinka' i5='Birsalmapálinka'
+    />
+
+    <IzEsIllat
+    i1='Gyümölcsös' i2='Illatos' i3='Érett gyümölcsre jellemző' i4='Harmonikus' i5='Tiszta lecsengésű'
+    />
+
+    <Tablazat/>
+
+
+
     </>
   )
 }
