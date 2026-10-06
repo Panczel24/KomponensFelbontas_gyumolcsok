@@ -1,3 +1,6 @@
+/*
+
+
 interface ListaProps {
   i1: string;
   i2: string;
@@ -66,4 +69,55 @@ export function IzEsIllat(props: ListaProps) {
 
   );
 }
- 
+ */
+
+import type { ListaAdat } from "../types/palinka";
+
+type ListaProps = {
+  lista: ListaAdat;
+};
+
+export function Lista({ lista }: ListaProps) {
+
+  return (
+    <div className="col-sm-4 kartya mb-2">
+
+      <h2>{lista.cim}</h2>
+
+      {
+        lista.szamozott === true ?
+
+          <ol className="list-group list-group-numbered">
+            {
+              lista.elemek.map((elem, index) => (
+                <li
+                  className="list-group-item"
+                  key={index}
+                >
+                  {elem}
+                </li>
+              ))
+            }
+          </ol>
+
+          :
+
+          <ul className="list-group">
+            {
+              lista.elemek.map((elem, index) => (
+                <li
+                  className="list-group-item"
+                  key={index}
+                >
+                  {elem}
+                </li>
+              ))
+            }
+          </ul>
+      }
+
+    </div>
+  );
+}
+
+
